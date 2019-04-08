@@ -1,3 +1,3 @@
 class Good < ApplicationRecord
-  belongs_to :restaurant
+  belongs_to :shop
 end
