@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_032500) do
+ActiveRecord::Schema.define(version: 2019_04_08_051653) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -30,7 +30,9 @@ ActiveRecord::Schema.define(version: 2019_04_08_032500) do
     t.string "expiry_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "shop_id"
     t.index ["restaurant_id"], name: "index_goods_on_restaurant_id"
+    t.index ["shop_id"], name: "index_goods_on_shop_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -44,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_04_08_032500) do
     t.index ["good_id"], name: "index_orders_on_good_id"
   end
 
-  create_table "restaurants", force: :cascade do |t|
+  create_table "shops", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "description"
